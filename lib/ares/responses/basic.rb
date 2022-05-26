@@ -73,7 +73,54 @@ module Ares
       end
 
       class Record < Base
-        ATTRIBUTES = %w[ICO Obchodni_firma Datum_vzniku Adresa_ARES Priznaky_subjektu
+
+        ##
+        # Další informace o subjektu:
+        # Služba Basic vrací kromě základních údajů o subjektu další informace specifické pro jednotlivé zdroje, např. registrační úřady, texty živnostenských oprávnění, předměty činnosti, hodnoty CZ-NACE, statistické charakteristiky.
+        #
+        # Součástí výstupu je i seznam registrací v jednotlivých zdrojových registrech v elementu Priznaky_subjektu s označením, zda má subjekt v příslušném registru platnou či zrušenou registraci.
+        #
+        # Význam písmen v elementu:
+        #
+        # A	platná registrace
+        # Z	zaniklá registrace
+        # H	zaniklá registrace déle než 4 roky
+        # S	v pozici č. 6 označuje skupinovou registraci DPH
+        # P	v pozici č. 15 označuje pozastavenou činnost, v pozici č. 21 platnou registraci ve Společném zemědělském registru
+        # E	v pozici č. 22 označuje, že existuje záznam v Insolvenčním rejstříku. Nutno prověřit stav řízení!
+        # N (nebo jiný znak)	není v evidenci
+        # Poznámka: mohou se objevit i další "služební" znaky, které všechny lze interpretovat jako příznak "N".
+        #
+        # Význam pozic v elementu:
+        #
+        # 1	rezervováno
+        # 2	příznak existence subjektu ve Veřejném rejstříku
+        # 3	příznak existence subjektu ve statistickém Registru ekonomických subjektů
+        # 4	příznak existence subjektu v Registru živnostenského podnikání
+        # 5	příznak existence subjektu v Národním registru poskytovatelů zdravotních služeb
+        # 6	příznak existence subjektu v Registru plátců daně z přidané hodnoty
+        # 7	příznak existence subjektu v Registru plátců spotřební daně
+        # 8	rezervováno
+        # 9	příznak existence subjektu v registru Centrální evidence úpadců - konkurz
+        # 10	příznak existence subjektu v registru Centrální evidence úpadců - vyrovnání
+        # 11	příznak existence subjektu v registru Centrální evidence dotací z rozpočtu
+        # 12	příznak existence subjektu v účelovém registru organizací systému ARIS
+        # 13	rezervováno
+        # 14	příznak existence subjektu v Registru církví a náboženských společností
+        # 15	příznak existence subjektu v Seznamu politických stran a hnutí
+        # 16	rezervováno
+        # 17	rezervováno
+        # 18	rezervováno
+        # 19	rezervováno
+        # 20	rezervováno
+        # 21	příznak existence subjektu v Zemědělském registru
+        # 22	příznak existence subjektu v Insolvenčním rejstříku
+        # 23	příznak existence subjektu v Rejstříku škol a školských zařízení
+        # 24	rezervováno
+        # 25	příznak existence subjektu v Registru osob
+        # 26 - 30	rezervováno
+
+        ATTRIBUTES = %w[ICO DIC Obchodni_firma Datum_vzniku Adresa_ARES Priznaky_subjektu
                         Kategorie_poctu_pracovniku].freeze
 
         COMPOSITE_ATTRIBUTES = {
@@ -83,6 +130,24 @@ module Ares
           CzNace: 'Nace',
           RegisteredInstitution: 'Registrace_RZP'
         }.freeze
+
+
+        ##
+        # S	v pozici č. 6 označuje skupinovou registraci DPH
+        # 6	příznak existence subjektu v Registru plátců daně z přidané hodnoty
+        def vat_payer?
+          priznaky_subjektu[5] == 'A' || group_vat_payer?
+        end
+
+        def group_vat_payer?
+          priznaky_subjektu[5] == 'S'
+        end
+
+        # 22	příznak existence subjektu v Insolvenčním rejstříku
+        def insolvent?
+          priznaky_subjektu[5] == 'N'
+        end
+
       end
 
       class RegisteredInstitution < Base
