@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Ares
   module Responses
     class TextCode
@@ -17,12 +15,6 @@ module Ares
 
       def inspect
         "#<TextCode(#{elem}) code=#{code} text=#{text}>"
-      end
-    end
-
-    class Error < TextCode
-      def error?
-        true
       end
     end
   end

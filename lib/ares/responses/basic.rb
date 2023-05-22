@@ -4,9 +4,7 @@ module Ares
       def initialize(xml_document)
         @response_hash = Hash.from_xml(xml_document)
         @base_response = @response_hash.values.first
-
         assign_base_attributes(@base_response)
-
         @content = @base_response.map { |key, value| parse_elem(key, value) }.compact
       end
 
@@ -73,7 +71,6 @@ module Ares
       end
 
       class Record < Base
-
         ##
         # Další informace o subjektu:
         # Služba Basic vrací kromě základních údajů o subjektu další informace specifické pro jednotlivé zdroje, např. registrační úřady, texty živnostenských oprávnění, předměty činnosti, hodnoty CZ-NACE, statistické charakteristiky.
