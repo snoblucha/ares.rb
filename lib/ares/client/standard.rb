@@ -3,7 +3,7 @@
 module Ares
   module Client
     class Standard < Base
-      ENDPOINT = 'http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_std.cgi'
+      ENDPOINT = 'https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_std.cgi'
 
       private
 

@@ -9,11 +9,16 @@ require 'ares/errors'
 require 'ares/logging'
 require 'ares/http'
 
+require 'ares/client/base'
+require 'ares/client/standard'
+require 'ares/client/basic'
+
 require 'ares/responses/text_code'
 require 'ares/responses/error'
 require 'ares/responses/base'
-require 'ares/responses/standard'
 require 'ares/responses/basic'
+
+require 'ares/responses/standard'
 require 'ares/responses/standard/identification'
 require 'ares/responses/standard/legal_form'
 require 'ares/responses/standard/person'
@@ -22,9 +27,14 @@ require 'ares/responses/standard/response'
 require 'ares/responses/standard/status_flags'
 require 'ares/responses/standard/ares_address'
 
-require 'ares/client/base'
-require 'ares/client/standard'
-require 'ares/client/basic'
+require 'ares/client/business_register'
+require 'ares/responses/business_register'
+require 'ares/responses/business_register/response'
+require 'ares/responses/business_register/record'
+require 'ares/responses/business_register/introduction'
+require 'ares/responses/business_register/registration'
+
+
 
 require 'ico-validator'
 
@@ -57,6 +67,14 @@ module Ares
     def basic(options)
       validate_ico_format(options[:ico])
       response = Client::Basic.call(options)
+      raise ArgumentError, "Arguments #{options} are invalid" if response.error?
+
+      response.record
+    end
+
+    def vypis_or(options)
+      validate_ico_format(options[:ico])
+      response = Client::VypisOr.call(options)
       raise ArgumentError, "Arguments #{options} are invalid" if response.error?
 
       response.record

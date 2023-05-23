@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=00000001&ver=1.0.2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 May 2023 08:20:44 GMT
+      Server:
+      - Apache
+      Cache-Control:
+      - public, no-cache
+      Expires:
+      - Tue, 23 May 2023 20:20:44 GMT
+      Content-Length:
+      - '1370'
+      Content-Type:
+      - text/xml
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGFyZTpBcmVzX29kcG92ZWRpIHhtbG5zOmFyZT0iaHR0cDovL3d3d2luZm8ubWZjci5jei9hcmVzL3htbF9kb2Mvc2NoZW1hcy9hcmVzL2FyZXNfYW5zd2VyX2Jhc2ljL3ZfMS4wLjIiIHhtbG5zOmR0dD0iaHR0cDovL3d3d2luZm8ubWZjci5jei9hcmVzL3htbF9kb2Mvc2NoZW1hcy9hcmVzL2FyZXNfZGF0YXR5cGVzL3ZfMS4wLjIiIHhtbG5zOnVkdD0iaHR0cDovL3d3d2luZm8ubWZjci5jei9hcmVzL3htbF9kb2Mvc2NoZW1hcy91dmlzX2RhdGF0eXBlcy92XzEuMC4xIiBvZHBvdmVkX2RhdHVtX2Nhcz0iMjAyMy0wNS0yM1QxMDoyMDo0NSIgb2Rwb3ZlZF9wb2NldD0iMSIgb2Rwb3ZlZF90eXA9IkJhc2ljIiB2eXN0dXBfZm9ybWF0PSJYTUwiIHhzbHQ9ImtsaWVudCIgdmFsaWRhdGlvbl9YU0xUPSJodHRwOi8vd3d3aW5mby5tZmNyLmN6L2FyZXMveG1sX2RvYy9zY2hlbWFzL2FyZXMvYXJlc19vZHBvdmVkaS54c2wiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhzaTpzY2hlbWFMb2NhdGlvbj0iaHR0cDovL3d3d2luZm8ubWZjci5jei9hcmVzL3htbF9kb2Mvc2NoZW1hcy9hcmVzL2FyZXNfYW5zd2VyX2Jhc2ljL3ZfMS4wLjIgaHR0cDovL3d3d2luZm8ubWZjci5jei9hcmVzL3htbF9kb2Mvc2NoZW1hcy9hcmVzL2FyZXNfYW5zd2VyX2Jhc2ljL3ZfMS4wLjIvYXJlc19hbnN3ZXJfYmFzaWNfdl8xLjAuMi54c2QiIElkPSJhcmVzIj4KPGFyZTpPZHBvdmVkPgo8ZHR0OlBvbW9jbmVfSUQ+MDwvZHR0OlBvbW9jbmVfSUQ+CjxkdHQ6RXJyb3I+CjxkdHQ6RXJyb3Jfa29kPjE8L2R0dDpFcnJvcl9rb2Q+CjxkdHQ6RXJyb3JfdGV4dD4KQ2h5YmEgNzEgLSBuZW5hbGV6ZW5vIDEKPC9kdHQ6RXJyb3JfdGV4dD4KPC9kdHQ6RXJyb3I+CjxkdHQ6VnlzbGVkZWtfaGxlZGFuaT4KPGR0dDpLb2Q+MjwvZHR0OktvZD4KPC9kdHQ6VnlzbGVkZWtfaGxlZGFuaT4KPGR0dDpQb2NldF96YXpuYW11PjA8L2R0dDpQb2NldF96YXpuYW11Pgo8ZHR0OlV2b2Q+CjxkdHQ6TmFkcGlzPlbDvXBpcyB6IGRhdCBSZWdpc3RydSBBUkVTIC0gYWt0dcOhbG7DrSBzdGF2IGtlIGRuaSAyMDIzLTA1LTIyPC9kdHQ6TmFkcGlzPgo8ZHR0OkFrdHVhbGl6YWNlX0RCPjIwMjMtMDUtMjI8L2R0dDpBa3R1YWxpemFjZV9EQj4KPGR0dDpEYXR1bV92eXBpc3U+MjAyMy0wNS0yMzwvZHR0OkRhdHVtX3Z5cGlzdT4KPGR0dDpDYXNfdnlwaXN1PjEwOjIwOjQ1PC9kdHQ6Q2FzX3Z5cGlzdT4KPGR0dDpUeXBfb2RrYXp1PjA8L2R0dDpUeXBfb2RrYXp1Pgo8L2R0dDpVdm9kPgo8L2FyZTpPZHBvdmVkPgo8L2FyZTpBcmVzX29kcG92ZWRpPgo=
+  recorded_at: Tue, 23 May 2023 08:20:45 GMT
+- request:
+    method: get
+    uri: https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_or.cgi?ico=00000001
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 May 2023 08:32:11 GMT
+      Server:
+      - Apache
+      Cache-Control:
+      - public, no-cache
+      Expires:
+      - Tue, 23 May 2023 20:32:11 GMT
+      Content-Length:
+      - '959'
+      Content-Type:
+      - text/xml
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <are:Ares_odpovedi xmlns:are="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_or/v_1.0.3" xmlns:D="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_datatypes/v_1.0.3" xmlns:U="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/uvis_datatypes/v_1.0.3" odpoved_datum_cas="2023-05-23T10:32:11" odpoved_pocet="1" odpoved_typ="Vypis_OR" vystup_format="XML" xslt="klient" validation_XSLT="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_odpovedi.xsl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_or/v_1.0.3 http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_or/v_1.0.3/ares_answer_or_v_1.0.3.xsd" Id="ares">
+        <are:Odpoved>
+        <D:PID>0</D:PID>
+        <D:E>
+        <D:EK>1</D:EK>
+        <D:ET>
+        Chyba 71 - nenalezeno 1
+        </D:ET>
+        </D:E>
+        <D:VH>
+        <D:K>3</D:K>
+        <D:T>Nenalezeno</D:T>
+        </D:VH>
+        <D:PZA>0</D:PZA>
+        </are:Odpoved>
+        </are:Ares_odpovedi>
+  recorded_at: Tue, 23 May 2023 08:32:11 GMT
+recorded_with: VCR 6.1.0
