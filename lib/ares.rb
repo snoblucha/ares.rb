@@ -72,9 +72,9 @@ module Ares
       response.record
     end
 
-    def vypis_or(options)
+    def business_register(options)
       validate_ico_format(options[:ico])
-      response = Client::VypisOr.call(options)
+      response = Client::BusinessRegister.call(options)
       raise ArgumentError, "Arguments #{options} are invalid" if response.error?
 
       response.record

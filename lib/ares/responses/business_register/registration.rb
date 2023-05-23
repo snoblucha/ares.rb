@@ -18,7 +18,7 @@ module Ares
         # @param elem [Nokogiri::XML::Element]
         def initialize(elem)
           @court = elem.at_xpath('./D:SZ/D:SD/D:T').content
-          @number = elem.at_xpath('./D:SZ/D:OV').content
+          @number = elem.at_xpath('./D:SZ/D:OV').content.gsub(/(\s+)/, ' ')
         end
 
         # rubocop:enable Lint/EmptyWhen

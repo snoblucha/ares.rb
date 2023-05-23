@@ -20,6 +20,7 @@ describe Ares::Responses::BusinessRegister do
       expect(result.registration.court).to be_a(String)
       expect(result.registration.court).to eq 'Městský soud v Praze'
       expect(result.registration.number).to be_a(String)
+      expect(result.registration.number).to eq 'B 8525'
       expect(result.texts).to be_a(Array)
     end
   end
